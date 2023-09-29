@@ -33,6 +33,6 @@ jobs:
       - name: "Install Composer dependencies with development dependencies."
         run: |
           composer install --no-interaction --prefer-dist --no-scripts
-          ./vendor/wp-cli/wp-cli/bin/wp --help
+          ./vendor/wp-cli/wp-cli/bin/wp dist-archive .
 
   
