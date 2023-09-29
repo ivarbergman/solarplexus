@@ -1,4 +1,4 @@
-name: Build and push docs
+name: Build and push package
 
 on:
   push:
@@ -33,5 +33,6 @@ jobs:
       - name: "Install Composer dependencies with development dependencies."
         run: |
           composer install --no-interaction --prefer-dist --no-scripts
-    
+          ./vendor/wp-cli/wp-cli/bin/wp --help
+
   
