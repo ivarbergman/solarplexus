@@ -1,0 +1,39 @@
+name: Build and push docs
+
+on:
+  push:
+    branches: ['master']
+
+jobs:
+  publish-docs:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      # - name: Use Node.js ${{ matrix.node-version }}
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
+      #     cache: 'yarn'
+      # - run: yarn install --frozen-lockfile
+      # - run: yarn build
+      - name: Lint php
+        uses: overtrue/phplint@8.1
+        with:
+          path: .
+
+      - name: "Sets up PHP with Composer."
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          tools: composer
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: "Install Composer dependencies with development dependencies."
+        run: |
+          composer install --no-interaction --prefer-dist --no-scripts
+    
+  

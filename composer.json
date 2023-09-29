@@ -1,4 +1,22 @@
 {
+	"name": "ivarbergman/sptest",
+	"description": "Create dynamic or handpicked lists of articles.",
+	"type": "wordpress-plugin",
+	"homepage": "https://ivarbergman.github.io/sptest/",
+	"require": {
+	  "php": ">=5.6"
+	},
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"WordPress",
+		"block"
+	],
+	"authors": [
+	  {
+		"name": "Äventyret",
+		"email": "ivarbergman@gmail.com"
+	  }
+	],
 	"require-dev": {
 		"wp-cli/wp-cli": "^2.7.1",
 		"overtrue/phplint": "^5.3"
