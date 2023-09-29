@@ -2,9 +2,7 @@ name: PHP lint CI
 
 on:
   push:
-    branches: ['_master']
-  pull_request:
-    branches: ['_master']
+    branches: ['master']
 
 jobs:
   build:

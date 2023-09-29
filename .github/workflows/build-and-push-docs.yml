@@ -1,21 +1,21 @@
-# name: Build and push docs
+name: Build and push docs
 
-# on:
-#   release:
-#     types: [published]
+on:
+  push:
+    branches: ['_master']
 
-# jobs:
-#   publish-docs:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       - uses: webfactory/ssh-agent@v0.5.4
-#         with:
-#           ssh-private-key: ${{ secrets.SOLARPLEXUS_BOT_SSH }}
-#       - uses: actions/setup-node@v2
-#         with:
-#           node-version: 16
-#       - name: 'Build docs'
-#         run: |
-#           yarn
-#           yarn docs:build
+jobs:
+  publish-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SOLARPLEXUS_BOT_SSH }}
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - name: 'Build docs'
+        run: |
+          yarn
+          yarn docs:build
