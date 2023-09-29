@@ -18,7 +18,7 @@
 	  }
 	],
 	"require-dev": {
-		"wp-cli/wp-cli": "^2.7.1",
+		"wp-cli/wp-cli-bundle": "^2.7.1",
 		"overtrue/phplint": "^5.3"
 	}
 }
