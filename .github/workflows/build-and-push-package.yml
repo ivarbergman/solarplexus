@@ -2,7 +2,7 @@ name: Build and push docs
 
 on:
   push:
-    branches: ['master']
+    branches: ['_master']
 
 jobs:
   publish-docs:
